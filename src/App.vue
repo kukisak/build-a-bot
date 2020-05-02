@@ -46,14 +46,14 @@
 
 <script>
 
+import { mapState } from 'vuex';
+
 export default {
   name: 'App',
   computed: {
+    ...mapState({ rootFoo: 'foo' }),
     cart() {
       return this.$store.state.robots.cart;
-    },
-    rootFoo() {
-      return this.$store.state.foo;
     },
     robotsFoo() {
       return this.$store.state.robots.foo;
