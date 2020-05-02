@@ -46,24 +46,18 @@
 
 <script>
 
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'App',
   computed: {
     ...mapState({ rootFoo: 'foo', usersFoo: (state) => state.users.foo }),
     ...mapState('robots', { robotsFoo: 'foo' }),
+    ...mapGetters({ rootGetterFoo: 'foo' }),
+    ...mapGetters('robots', { robotsGetterFoo: 'foo' }),
+    ...mapGetters({ usersGetterFoo: (getters) => getters.users.foo }),
     cart() {
       return this.$store.state.robots.cart;
-    },
-    rootGetterFoo() {
-      return this.$store.getters.foo;
-    },
-    robotsGetterFoo() {
-      return this.$store.getters['robots/foo'];
-    },
-    usersGetterFoo() {
-      return this.$store.getters['users/foo'];
     },
   },
 };
