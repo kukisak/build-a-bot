@@ -11,8 +11,8 @@ export default {
     },
   },
   getters: {
-    foo(state) {
-      return `users-getter/${state.foo}`;
+    foo(state, getters, rootState) {
+      return `users-getter/${rootState.foo}`;
     },
   },
   actions: {
