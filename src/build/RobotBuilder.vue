@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 import createdHookMixin from './created-hook-mixin';
 import PartSelector from './PartSelector.vue';
 import CollapsibleSection from '../shared/CollapsibleSection.vue';
@@ -112,6 +112,7 @@ export default {
   },
   methods: {
     ...mapActions('robots', ['getParts', 'addRobotToCart']),
+    ...mapMutations('robots', ['someMutation']),
     addToCart() {
       const robot = this.selectedRobot;
       const cost = robot.head.cost + robot.leftArm.cost + robot.torso.cost + robot.rightArm.cost
