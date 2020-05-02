@@ -4,15 +4,15 @@
       <CollapsibleSection>
         <div class="preview-content">
           <div class="top-row">
-            <img :src="selectedRobot.head.src"/>
+            <img :src="selectedRobot.head.src" alt="head"/>
           </div>
           <div class="middle-row">
-            <img :src="selectedRobot.leftArm.src" class="rotate-left"/>
-            <img :src="selectedRobot.torso.src"/>
-            <img :src="selectedRobot.rightArm.src" class="rotate-right"/>
+            <img :src="selectedRobot.leftArm.src" alt="left arm" class="rotate-left"/>
+            <img :src="selectedRobot.torso.src" alt="torso"/>
+            <img :src="selectedRobot.rightArm.src" alt="right arm" class="rotate-right"/>
           </div>
           <div class="bottom-row">
-            <img :src="selectedRobot.base.src"/>
+            <img :src="selectedRobot.base.src" alt="base"/>
           </div>
         </div>
       </CollapsibleSection>
@@ -115,7 +115,7 @@ export default {
       const cost = robot.head.cost + robot.leftArm.cost + robot.torso.cost + robot.rightArm.cost
           + robot.base.cost;
 
-      this.$store.commit('addRobotToCart', { ...robot, cost });
+      this.$store.dispatch('addRobotToCart', { ...robot, cost });
       this.addedToCart = true;
     },
   },
