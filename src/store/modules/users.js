@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
   state: {
     user: null,
-    // foo: 'users-foo',
+    foo: 'users-foo',
   },
   mutations: {
     updateCurrentUser(state, user) {
