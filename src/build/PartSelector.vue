@@ -1,9 +1,12 @@
 <template>
   <div class="part" :class="position">
+    {{pinPadding}}
     <img @click="showPartInfo()" :src="selectedPart.src" alt="part info" title="arm"/>
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
-    <span v-pin="{ bottom: '10px', right: '5px' }"
+    <span
+      @click="pinPadding = '30px'"
+      v-pin="{ bottom: pinPadding, right: pinPadding }"
           class="sale" v-show="selectedPart.onSale">Sale!</span>
   </div>
 </template>
@@ -37,7 +40,7 @@ export default {
     },
   },
   data() {
-    return { selectedPartIndex: 0 };
+    return { selectedPartIndex: 0, pinPadding: '5px' };
   },
   computed: {
     selectedPart() {
