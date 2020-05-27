@@ -79,7 +79,7 @@
             loader: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
               cacheDirectory: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '923e1470'
+              cacheIdentifier: '1bfb639c'
             }
           },
           {
@@ -89,7 +89,7 @@
                 whitespace: 'condense'
               },
               cacheDirectory: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '923e1470'
+              cacheIdentifier: '1bfb639c'
             }
           }
         ]
@@ -1071,7 +1071,7 @@
             loader: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
               cacheDirectory: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\.cache\\babel-loader',
-              cacheIdentifier: '4866c8d2'
+              cacheIdentifier: '6e52ec0e'
             }
           },
           {
@@ -1100,7 +1100,7 @@
                 '.vue'
               ],
               cache: true,
-              cacheIdentifier: 'cc7e768a',
+              cacheIdentifier: '3916c93c',
               emitWarning: false,
               emitError: false,
               eslintPath: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\eslint',
@@ -1113,6 +1113,23 @@
         test: /\.coffee$/,
         use: [
           'coffee-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
+        use: [
+          {
+            loader: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\url-loader\\dist\\cjs.js',
+            options: {
+              limit: 10000,
+              fallback: {
+                loader: 'C:\\Petr\\Git\\build-a-bot\\node_modules\\file-loader\\dist\\cjs.js',
+                options: {
+                  name: 'img/[name].[hash:8].[ext]'
+                }
+              }
+            }
+          }
         ]
       }
     ]
