@@ -14,7 +14,7 @@
 export default {
   name: 'HomePage',
   created() {
-    console.log(process.env.VUE_APP_TEST, process.env.SOME_TEST);
+    console.log(process.env.VUE_APP_TEST, process.env.SOME_TEST, process.env.NODE_ENV);
   },
   props: {
     msg: String,
